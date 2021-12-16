@@ -19,7 +19,6 @@ namespace CloudflareBlazorTrial.Client
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.14.3.0 (NJsonSchema v10.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class AzureFunctionsClient 
     {
-        private string _baseUrl = "http://localhost:7071/api";
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<System.Text.Json.JsonSerializerOptions> _settings;
     
@@ -36,12 +35,6 @@ namespace CloudflareBlazorTrial.Client
             return settings;
         }
     
-        public string BaseUrl
-        {
-            get { return _baseUrl; }
-            set { _baseUrl = value; }
-        }
-    
         protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get { return _settings.Value; } }
     
         partial void UpdateJsonSerializerSettings(System.Text.Json.JsonSerializerOptions settings);
@@ -50,20 +43,13 @@ namespace CloudflareBlazorTrial.Client
         partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, string url);
         partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, System.Text.StringBuilder urlBuilder);
         partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
-        /// <returns>The OK response</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<System.Collections.Generic.ICollection<PeopleDTO>> GetPeopleAsync()
-        {
-            return GetPeopleAsync(System.Threading.CancellationToken.None);
-        }
-    
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The OK response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<PeopleDTO>> GetPeopleAsync(System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<PeopleDTO>> GetPeopleAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/GetPeople");
+            urlBuilder_.Append("GetPeople");
     
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -124,20 +110,13 @@ namespace CloudflareBlazorTrial.Client
             }
         }
     
-        /// <returns>The OK response</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<System.DateTimeOffset> RunAsync()
-        {
-            return RunAsync(System.Threading.CancellationToken.None);
-        }
-    
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The OK response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<System.DateTimeOffset> RunAsync(System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<System.DateTimeOffset> RunAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/ReturnDatetime");
+            urlBuilder_.Append("ReturnDatetime");
     
             var client_ = _httpClient;
             var disposeClient_ = false;
