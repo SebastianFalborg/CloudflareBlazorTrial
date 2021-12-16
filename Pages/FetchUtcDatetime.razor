@@ -1,19 +1,19 @@
 ﻿@page "/fetchutcdatetime"
-@inject AzureFunctionsHttpClient Http
+@inject AzureFunctionsClient Client
 
 <PageTitle>UTC datetime</PageTitle>
 
 <h1>Weather forecast</h1>
 
-<p>This component demonstrates fetching UTC datetime from a Azure function</p>
+<p>This component demonstrates fetching UTC datetime from an Azure function with an NswagClient.</p>
 
 <h2>@utcDatetime</h2>
 
 @code {
-    private DateTime utcDatetime;
+    private DateTimeOffset utcDatetime;
 
     protected override async Task OnInitializedAsync()
     {
-        utcDatetime = await Http.GetFromJsonAsync<DateTime>("returndatetime");
+        utcDatetime = await Client.ReturnDatetimeAsync();
     }
 }

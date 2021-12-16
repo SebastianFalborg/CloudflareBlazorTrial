@@ -10,8 +10,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 string webApiBaseAddress = builder.Configuration["webApiBaseAddress"] ?? string.Empty;
 string azureFunctionsBaseAddress = builder.Configuration["azureFunctionsBaseAddress"] ?? string.Empty;
 
-builder.Services.AddScoped(sp => new WebApiHttpClient { BaseAddress = new Uri(webApiBaseAddress) });
-builder.Services.AddScoped(sp => new AzureFunctionsHttpClient { BaseAddress = new Uri(azureFunctionsBaseAddress) });
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(webApiBaseAddress) });
 builder.Services.AddScoped(sp => new AzureFunctionsClient(new HttpClient { BaseAddress = new Uri(azureFunctionsBaseAddress) }));
 
 await builder.Build().RunAsync();

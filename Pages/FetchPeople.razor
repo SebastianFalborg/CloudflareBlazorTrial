@@ -1,5 +1,5 @@
 ﻿@page "/fetchpeople"
-@inject AzureFunctionsClient client
+@inject AzureFunctionsClient Client
 
 <PageTitle>People</PageTitle>
 
@@ -33,10 +33,10 @@ else
 }
 
 @code {
-    private IEnumerable<PeopleDTO> people;
+    private IEnumerable<PeopleDTO>? people;
 
     protected override async Task OnInitializedAsync()
     {
-        people = await client.GetPeopleAsync();
+        people = await Client.GetPeopleAsync();
     }
 }
