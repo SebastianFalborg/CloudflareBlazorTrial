@@ -1,5 +1,5 @@
 using CloudflareBlazorTrial;
-using CloudflareBlazorTrial.Client;
+using CloudflareBlazorTrial.Clients;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 

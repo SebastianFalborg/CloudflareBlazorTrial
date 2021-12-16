@@ -94,7 +94,7 @@
       "checksumCacheEnabled": false,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "Client/AzureFunctionsClient.cs",
+      "output": "Clients/AzureFunctionsClient.cs",
       "newLineBehavior": "Auto"
     }
   }
