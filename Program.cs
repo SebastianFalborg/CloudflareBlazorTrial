@@ -12,5 +12,6 @@ string azureFunctionsBaseAddress = builder.Configuration["azureFunctionsBaseAddr
 
 builder.Services.AddScoped(sp => new WebApiHttpClient { BaseAddress = new Uri(webApiBaseAddress) });
 builder.Services.AddScoped(sp => new AzureFunctionsHttpClient { BaseAddress = new Uri(azureFunctionsBaseAddress) });
+builder.Services.AddScoped(sp => new AzureFunctionsClient(new HttpClient { BaseAddress = new Uri(azureFunctionsBaseAddress) }));
 
 await builder.Build().RunAsync();
